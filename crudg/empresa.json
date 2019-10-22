@@ -1,0 +1,41 @@
+{
+	"model_name":"Empresa",
+	"soft_deletes":"yes",
+	"pk":"id",
+	"localize":"yes",
+	"table":"empresas",
+    "fields": [		
+        {
+            "name": "Marca",
+            "type": "string"
+        },
+        {
+            "name": "Direccion",
+            "type": "string"
+        },
+        {
+            "name": "Correo",
+            "type": "string"
+        }
+    ],
+   
+    "relationships": [
+        {
+            "name": "empleados",
+            "type": "hasMany",
+            "class": "App\\Models\\Empleado"
+        },
+        {
+            "name": "productos",
+            "type": "hasMany",
+            "class": "App\\Models\\Producto"  
+        }
+    ],
+    "validations": [
+        {
+            "field": "Correo",
+            "rules": "required|min:5|max:20"
+        }
+    ]
+	
+}

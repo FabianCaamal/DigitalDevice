@@ -1,0 +1,40 @@
+{
+	"model_name":"Maquina",
+	"soft_deletes":"yes",
+	"pk":"id",
+	"localize":"yes",
+	"table":"maquinas",
+    "fields": [		
+        {
+            "name": "codigo",
+            "type": "string"
+        },
+        {
+            "name": "longitud",
+            "type": "string"
+        },
+        {
+            "name": "latitud",
+            "type": "string"
+        }
+    ],
+   
+    "relationships": [
+        {
+            "name": "stocks",
+            "type": "hasMany",
+            "class": "App\\Models\\Stock"
+        }
+    ],
+    "validations": [
+        {
+            "field": "longitud",
+            "rules": "required|min:5|max:30"
+        },
+        {
+            "field": "latitud",
+            "rules": "required|min:5|max:30"
+        }
+    ]
+	
+}

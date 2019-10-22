@@ -1,0 +1,52 @@
+{
+	"model_name":"Producto",
+	"soft_deletes":"yes",
+	"pk":"id",
+	"localize":"yes",
+	"table":"productos",
+    "fields": [		
+        {
+            "name": "nombre",
+            "type": "string"
+        },
+        {
+            "name": "precio",
+            "type": "number"
+        },
+        {
+            "name": "empresa_id",
+            "type": "integer#unsigned"
+        }
+    ],
+    "foreign_keys": [
+        {
+            "column": "empresa_id",
+            "references": "id",
+            "on": "empresas",
+            "onDelete": "cascade"
+        }
+    ],
+    "relationships": [
+        {
+            "name": "empresa",
+            "type": "belongsTo",
+            "class": "App\\Models\\Empresa"
+        },
+        {
+            "name": "stocks",
+            "type": "hasMany",
+            "class": "App\\Models\\Stock"
+        }
+    ],
+    "validations": [
+        {
+            "field": "nombre",
+            "rules": "required|min:5|max:20"
+        },
+		{
+            "field": "precio",
+            "rules": "required|min:1"
+        }
+    ]
+	
+}
