@@ -1,0 +1,49 @@
+{
+	"model_name":"Stock",
+	"soft_deletes":"yes",
+	"pk":"id",
+	"localize":"yes",
+	"table":"stocks",
+    "fields": [		
+        
+        {
+            "name": "maquina_id",
+            "type": "integer#unsigned"
+        },
+        {
+            "name": "producto",
+            "type": "integer#unsigned"
+        },
+        {
+            "name": "cantidad",
+            "type": "number"
+        }
+    ],
+    "foreign_keys": [
+        {
+            "column": "producto_id",
+            "references": "id",
+            "on": "productos",
+            "onDelete": "cascade"
+        },
+        {
+            "column": "maquina_id",
+            "references": "id",
+            "on": "maquinas",
+            "onDelete": "cascade"
+        }
+    ],
+    "relationships": [
+        {
+            "name": "producto",
+            "type": "hasOne",
+            "class": "App\\Models\\Producto"
+        },
+        {
+            "name": "maquina",
+            "type": "belongsTo",
+            "class": "App\\Models\\Maquina"
+        }
+    ]
+	
+}

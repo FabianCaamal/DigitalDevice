@@ -1,0 +1,54 @@
+{
+	"model_name":"Queja",
+	"soft_deletes":"yes",
+	"pk":"id",
+	"localize":"yes",
+	"table":"quejas",
+    "fields": [		
+        {
+            "name": "usuario_id",
+            "type": "integer#unsigned"
+        },
+        {
+            "name": "empresa_id",
+            "type": "integer#unsigned"
+        },
+        {
+            "name": "detalles",
+            "type": "text"
+        }
+    ],
+    "foreign_keys": [
+        {
+            "column": "usuario_id",
+            "references": "id",
+            "on": "usuarios",
+            "onDelete": "cascade"
+        },
+        {
+            "column": "empresa_id",
+            "references": "id",
+            "on": "empresas",
+            "onDelete": "cascade"
+        }
+    ],
+    "relationships": [
+        {
+            "name": "solicitante",
+            "type": "hasOne",
+            "class": "App\\Models\\Usuario"
+        },
+        {
+            "name": "dirigidoA",
+            "type": "hasOne",
+            "class": "App\\Models\\Empresa"
+        }
+    ],
+    "validations": [
+        {
+            "field": "detalles",
+            "rules": "required|min:5|max:100"
+        }
+    ]
+	
+}

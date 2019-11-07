@@ -1,0 +1,39 @@
+{
+	"model_name":"Usuario",
+	"soft_deletes":"yes",
+	"pk":"id",
+	"localize":"yes",
+	"table":"usuarios",
+    "fields": [	
+        {
+            "name": "nombre",
+            "type": "string"
+        },	
+        {
+            "name": "correo",
+            "type": "string"
+        },
+        {
+            "name": "sexo",
+            "type": "select",
+            "options": {
+                "Hombre": "Hombre",
+                "Mujer": "Mujer"
+            }
+        }
+    ],
+    "relationships": [
+        {
+            "name": "quejas",
+            "type": "hasMany",
+            "class": "App\\Models\\Queja"
+        }
+    ],
+    "validations": [
+        {
+            "field": "correo",
+            "rules": "required|min:5|max:20"
+        }
+    ]
+	
+}

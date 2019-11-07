@@ -1,0 +1,56 @@
+{
+	"model_name":"Trabajo",
+	"soft_deletes":"yes",
+	"pk":"id",
+	"localize":"yes",
+	"table":"trabajos",
+    "fields": [		
+        {
+            "name": "Empleado",
+            "type": "string"
+        },
+        {
+            "name": "UbicacionMaquina",
+            "type": "string"
+        },
+        {
+          "name": "CantidadAsignada",
+            "type": "string"
+        },
+        {
+            "name": "FechaEncargo",
+            "type": "date"
+        },
+        {
+            "name": "EstatusTrabajo",
+            "type": "select",
+            "options": {
+                "Pendiente": "Pendiente",
+                "Realizado": "Realizado"
+            }
+        }
+    ],
+    "relationships": [
+        {
+            "name": "empleado",
+            "type": "hasOne",
+            "class": "App\\Models\\Empleado"
+        },
+        {
+            "name": "maquina",
+            "type": "hasOne",
+            "class": "App\\Models\\Maquina"
+        }
+    ],
+    "validations": [
+        {
+            "field": "Empleado",
+            "rules": "required|min:5|max:20"
+        },
+        {
+            "field": "FechaEncargo",
+            "rules": "required|min:5"
+        }
+    ]
+	
+}
