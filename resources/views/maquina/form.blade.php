@@ -13,6 +13,11 @@
     <input class="form-control" name="latitud" type="text" id="latitud" value="{{ isset($maquina->latitud) ? $maquina->latitud : ''}}" required>
     {!! $errors->first('latitud', '<p class="help-block">:message</p>') !!}
 </div>
+<div class="form-group {{ $errors->has('DineroAlmacenado') ? 'has-error' : ''}}">
+    <label for="DineroAlmacenado" class="control-label">{{ 'Dineroalmacenado' }}</label>
+    <input class="form-control" name="DineroAlmacenado" type="number" id="DineroAlmacenado" value="{{ isset($maquina->DineroAlmacenado) ? $maquina->DineroAlmacenado : ''}}" >
+    {!! $errors->first('DineroAlmacenado', '<p class="help-block">:message</p>') !!}
+</div>
 
 
 <div class="form-group">

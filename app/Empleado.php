@@ -33,4 +33,3 @@ class Empleado extends Model
     }
     
 }
-x

@@ -25,7 +25,7 @@ class Maquina extends Model
      *
      * @var array
      */
-    protected $fillable = ['codigo', 'longitud', 'latitud'];
+    protected $fillable = ['codigo', 'longitud', 'latitud', 'DineroAlmacenado'];
 
     public function stocks()
     {

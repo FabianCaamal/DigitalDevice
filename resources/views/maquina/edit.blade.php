@@ -1,12 +1,13 @@
-@extends('adminlte::Layouts.app')
-    @section('main-content')
+@extends('layouts.app')
+
+@section('content')
     <div class="container">
         <div class="row">
-           
+            @include('admin.sidebar')
 
             <div class="col-md-9">
                 <div class="card">
-                    <div class="card-header">Edit maquina #{{ $maquina->id }}</div>
+                    <div class="card-header">Edit Maquina #{{ $maquina->id }}</div>
                     <div class="card-body">
                         <a href="{{ url('/maquina') }}" title="Back"><button class="btn btn-warning btn-sm"><i class="fa fa-arrow-left" aria-hidden="true"></i> Back</button></a>
                         <br />

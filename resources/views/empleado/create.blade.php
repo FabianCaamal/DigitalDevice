@@ -1,6 +1,5 @@
-@extends('layouts.app')
-
-@section('content')
+ @extends('adminlte::Layouts.app')
+    @section('main-content')
     <div class="container">
         <div class="row">
             @include('admin.sidebar')

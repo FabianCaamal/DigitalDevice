@@ -8,7 +8,7 @@ use App\Http\Controllers\Controller;
 use App\Maquina;
 use Illuminate\Http\Request;
 
-class maquinaController extends Controller
+class MaquinaController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -24,6 +24,7 @@ class maquinaController extends Controller
             $maquina = Maquina::where('codigo', 'LIKE', "%$keyword%")
                 ->orWhere('longitud', 'LIKE', "%$keyword%")
                 ->orWhere('latitud', 'LIKE', "%$keyword%")
+                ->orWhere('DineroAlmacenado', 'LIKE', "%$keyword%")
                 ->latest()->paginate($perPage);
         } else {
             $maquina = Maquina::latest()->paginate($perPage);

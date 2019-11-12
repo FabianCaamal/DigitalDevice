@@ -21,7 +21,7 @@
     ],
     "foreign_keys": [
         {
-            "column": "producto_id",
+            "column": "producto",
             "references": "id",
             "on": "productos",
             "onDelete": "cascade"

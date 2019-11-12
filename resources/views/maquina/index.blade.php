@@ -1,14 +1,15 @@
-@extends('adminlte::Layouts.app')
-    @section('main-content')
+@extends('layouts.app')
+
+@section('content')
     <div class="container">
         <div class="row">
-          
+            @include('admin.sidebar')
 
             <div class="col-md-9">
                 <div class="card">
-                    <h1><div class="card-header">Maquina</div></h1>
+                    <div class="card-header">Maquina</div>
                     <div class="card-body">
-                        <a href="{{ url('/maquina/create') }}" class="btn btn-success btn-sm" title="Add New maquina">
+                        <a href="{{ url('/maquina/create') }}" class="btn btn-success btn-sm" title="Add New Maquina">
                             <i class="fa fa-plus" aria-hidden="true"></i> Add New
                         </a>
 
@@ -38,16 +39,13 @@
                                         <td>{{ $loop->iteration }}</td>
                                         <td>{{ $item->codigo }}</td><td>{{ $item->longitud }}</td><td>{{ $item->latitud }}</td>
                                         <td>
-                                            <a href="{{ url('/maquina/' . $item->id) }}" title="View maquina"><button class="btn btn-info btn-sm"><i class="fa fa-eye" aria-hidden="true"></i> View</button></a>
-
-                                            <a href="{{ url('/maquina/' . $item->id . '/edit') }}" title="Edit maquina"><button class="btn btn-primary btn-sm"><i class="fa fa-pencil-square-o" aria-hidden="true"></i> Edit</button></a>
-
-                                            <a href="#" title="maps maquina"><button class="btn btn-success btn-sm"><i class="glyphicon glyphicon-search" aria-hidden="true"></i> Ir</button></a>
+                                            <a href="{{ url('/maquina/' . $item->id) }}" title="View Maquina"><button class="btn btn-info btn-sm"><i class="fa fa-eye" aria-hidden="true"></i> View</button></a>
+                                            <a href="{{ url('/maquina/' . $item->id . '/edit') }}" title="Edit Maquina"><button class="btn btn-primary btn-sm"><i class="fa fa-pencil-square-o" aria-hidden="true"></i> Edit</button></a>
 
                                             <form method="POST" action="{{ url('/maquina' . '/' . $item->id) }}" accept-charset="UTF-8" style="display:inline">
                                                 {{ method_field('DELETE') }}
                                                 {{ csrf_field() }}
-                                                <button type="submit" class="btn btn-danger btn-sm" title="Delete maquina" onclick="return confirm(&quot;Confirm delete?&quot;)"><i class="fa fa-trash-o" aria-hidden="true"></i> Delete</button>
+                                                <button type="submit" class="btn btn-danger btn-sm" title="Delete Maquina" onclick="return confirm(&quot;Confirm delete?&quot;)"><i class="fa fa-trash-o" aria-hidden="true"></i> Delete</button>
                                             </form>
                                         </td>
                                     </tr>

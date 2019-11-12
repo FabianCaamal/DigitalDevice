@@ -19,20 +19,7 @@
         }
         
     ],
-    "foreign_keys": [
-        {
-            "column": "producto_id",
-            "references": "id",
-            "on": "productos",
-            "onDelete": "cascade"
-        },
-        {
-            "column": "maquina_id",
-            "references": "id",
-            "on": "maquinas",
-            "onDelete": "cascade"
-        }
-    ],
+ 
     "relationships": [
         {
             "name": "producto",
