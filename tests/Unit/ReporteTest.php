@@ -15,6 +15,7 @@ class ReporteTest extends TestCase
      */
     public function testExample()
     {
+    	//no sé
         $this->assertTrue(true);
     }
 }
