@@ -31,5 +31,9 @@ class Maquina extends Model
     {
         return $this->hasMany('App\Models\Stock');
     }
+    public function ventas()
+    {
+        return $this->hasMany('App\Models\Ventas');
+    }
     
 }
