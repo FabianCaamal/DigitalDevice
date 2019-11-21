@@ -35,6 +35,10 @@ class Producto extends Model
     {
         return $this->hasMany('App\Models\Venta');
     }
+     public function empresas()
+    {
+        return $this->belongsTo('App\Models\Empresa');
+    }
 
     
 }

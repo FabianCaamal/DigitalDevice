@@ -29,7 +29,7 @@ class Queja extends Model
 
     public function solicitante()
     {
-        return $this->hasOne('App\Models\Usuario');
+        return $this->belongsTo('App\Models\Usuario');
     }
     public function dirigidoA()
     {
