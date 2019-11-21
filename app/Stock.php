@@ -25,15 +25,15 @@ class Stock extends Model
      *
      * @var array
      */
-    protected $fillable = ['maquina_id', 'producto', 'cantidad'];
+    protected $fillable = ['maquina_id', 'producto_id', 'cantidad', 'precio'];
 
     public function producto()
     {
-        return $this->hasOne('App\Models\Producto');
+        return $this->belongsTo('App\Producto');
     }
     public function maquina()
     {
-        return $this->belongsTo('App\Models\Maquina');
+        return $this->belongsTo('App\Maquina');
     }
     
 }

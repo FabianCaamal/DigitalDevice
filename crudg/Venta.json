@@ -6,12 +6,16 @@
 	"table":"venta",
     "fields": [		
         {
-            "name": "Fecha",
+            "name": "fecha",
             "type": "date"
         },
         {
-            "name": "Producto",
-            "type": "string"
+            "name": "maquina_id",
+            "type": "integer#unsigned"
+        },
+        {
+            "name": "producto_id",
+            "type": "integer#unsigned"
         },
         {
             "name": "Precio",
@@ -22,12 +26,12 @@
  
     "relationships": [
         {
-            "name": "producto",
-            "type": "hasOne",
+            "name": "producto_id",
+            "type": "belongsTo",
             "class": "App\\Models\\Producto"
         },
         {
-            "name": "maquina",
+            "name": "maquina_id",
             "type": "belongsTo",
             "class": "App\\Models\\Maquina"
         }

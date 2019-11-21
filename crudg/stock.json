@@ -5,23 +5,26 @@
 	"localize":"yes",
 	"table":"stocks",
     "fields": [		
-        
         {
             "name": "maquina_id",
             "type": "integer#unsigned"
         },
         {
-            "name": "producto",
+            "name": "producto_id",
             "type": "integer#unsigned"
         },
         {
             "name": "cantidad",
             "type": "number"
+        },
+        {
+            "name": "precio",
+            "type": "double"
         }
-    ],
+        ],
     "foreign_keys": [
         {
-            "column": "producto",
+            "column": "producto_id",
             "references": "id",
             "on": "productos",
             "onDelete": "cascade"
@@ -32,18 +35,18 @@
             "on": "maquinas",
             "onDelete": "cascade"
         }
-    ],
+        ],
     "relationships": [
         {
             "name": "producto",
             "type": "hasOne",
-            "class": "App\\Models\\Producto"
+            "class": "App\\Producto"
         },
         {
             "name": "maquina",
-            "type": "belongsTo",
-            "class": "App\\Models\\Maquina"
+            "type": "belongsTo", 
+            "class": "App\\Maquina"
         }
-    ]
+        ]
 	
 }

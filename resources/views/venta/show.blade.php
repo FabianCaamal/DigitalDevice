@@ -27,7 +27,7 @@
                                     <tr>
                                         <th>ID</th><td>{{ $ventum->id }}</td>
                                     </tr>
-                                    <tr><th> Fecha </th><td> {{ $ventum->Fecha }} </td></tr><tr><th> Producto </th><td> {{ $ventum->Producto }} </td></tr><tr><th> Precio </th><td> {{ $ventum->Precio }} </td></tr>
+                                    <tr><th> Fecha </th><td> {{ $ventum->fecha }} </td></tr><tr><th> Maquina Id </th><td> {{ $ventum->maquina_id }} </td></tr><tr><th> Producto Id </th><td> {{ $ventum->producto_id }} </td></tr>
                                 </tbody>
                             </table>
                         </div>

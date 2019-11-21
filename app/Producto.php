@@ -27,5 +27,10 @@ class Producto extends Model
      */
     protected $fillable = ['nombre', 'precio', 'Categoria', 'Distribuidor'];
 
+    public function stocks()
+    {
+        return $this->hasMany('App\Models\Stock');
+    }
+
     
 }

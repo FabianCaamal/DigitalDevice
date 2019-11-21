@@ -25,13 +25,13 @@ class Venta extends Model
      *
      * @var array
      */
-    protected $fillable = ['Fecha', 'Producto', 'Precio'];
+    protected $fillable = ['fecha', 'maquina_id', 'producto_id', 'Precio'];
 
-    public function producto()
+    public function producto_id()
     {
-        return $this->hasOne('App\Models\Producto');
+        return $this->belongsTo('App\Models\Producto');
     }
-    public function maquina()
+    public function maquina_id()
     {
         return $this->belongsTo('App\Models\Maquina');
     }

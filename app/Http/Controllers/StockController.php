@@ -22,8 +22,9 @@ class StockController extends Controller
 
         if (!empty($keyword)) {
             $stock = Stock::where('maquina_id', 'LIKE', "%$keyword%")
-                ->orWhere('producto', 'LIKE', "%$keyword%")
+                ->orWhere('producto_id', 'LIKE', "%$keyword%")
                 ->orWhere('cantidad', 'LIKE', "%$keyword%")
+                ->orWhere('precio', 'LIKE', "%$keyword%")
                 ->latest()->paginate($perPage);
         } else {
             $stock = Stock::latest()->paginate($perPage);

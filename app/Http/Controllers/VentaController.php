@@ -21,8 +21,9 @@ class VentaController extends Controller
         $perPage = 25;
 
         if (!empty($keyword)) {
-            $venta = Venta::where('Fecha', 'LIKE', "%$keyword%")
-                ->orWhere('Producto', 'LIKE', "%$keyword%")
+            $venta = Venta::where('fecha', 'LIKE', "%$keyword%")
+                ->orWhere('maquina_id', 'LIKE', "%$keyword%")
+                ->orWhere('producto_id', 'LIKE', "%$keyword%")
                 ->orWhere('Precio', 'LIKE', "%$keyword%")
                 ->latest()->paginate($perPage);
         } else {

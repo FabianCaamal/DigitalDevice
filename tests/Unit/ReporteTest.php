@@ -13,9 +13,9 @@ class ReporteTest extends TestCase
      *
      * @return void
      */
-    public function testExample()
+    public function testDineroTest()
     {
-    	//no sé
+    	
         $this->assertTrue(true);
     }
 }

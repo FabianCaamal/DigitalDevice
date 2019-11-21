@@ -64,3 +64,6 @@ Route::resource('maquina', 'MaquinaController');
 Route::resource('stock', 'StockController');
 Route::resource('stock', 'StockController');
 Route::resource('queja', 'QuejaController');
+Route::resource('stock', 'StockController');
+Route::resource('stock', 'StockController');
+Route::resource('venta', 'VentaController');

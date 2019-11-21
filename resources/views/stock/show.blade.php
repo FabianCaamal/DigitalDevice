@@ -27,7 +27,7 @@
                                     <tr>
                                         <th>ID</th><td>{{ $stock->id }}</td>
                                     </tr>
-                                    <tr><th> Maquina Id </th><td> {{ $stock->maquina_id }} </td></tr><tr><th> Producto </th><td> {{ $stock->producto }} </td></tr><tr><th> Cantidad </th><td> {{ $stock->cantidad }} </td></tr>
+                                    <tr><th> Maquina Id </th><td> {{ $stock->maquina_id }} </td></tr><tr><th> Producto Id </th><td> {{ $stock->producto_id }} </td></tr><tr><th> Cantidad </th><td> {{ $stock->cantidad }} </td></tr>
                                 </tbody>
                             </table>
                         </div>
