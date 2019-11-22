@@ -27,13 +27,13 @@ class Queja extends Model
      */
     protected $fillable = ['usuario_id', 'empresa_id', 'detalles'];
 
-    public function solicitante()
+    public function usuario()
     {
-        return $this->belongsTo('App\Models\Usuario');
+        return $this->belongsTo('App\Usuario');
     }
-    public function dirigidoA()
+    public function empresa()
     {
-        return $this->hasOne('App\Models\Empresa');
+        return $this->hasOne('App\Empresa');
     }
     
 }

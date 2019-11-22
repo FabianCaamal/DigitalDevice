@@ -5,10 +5,10 @@ namespace App\Http\Controllers;
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
 
-use App\Empleado;
+use App\Contacto;
 use Illuminate\Http\Request;
 
-class empleadoController extends Controller
+class ContactosController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -18,21 +18,19 @@ class empleadoController extends Controller
     public function index(Request $request)
     {
         $keyword = $request->get('search');
-        $perPage = 25;
+        $perPage = 50;
 
         if (!empty($keyword)) {
-            $empleado = Empleado::where('nombre', 'LIKE', "%$keyword%")
-                ->orWhere('numero', 'LIKE', "%$keyword%")
+            $contactos = Contacto::where('nombre', 'LIKE', "%$keyword%")
+                ->orWhere('descripcion', 'LIKE', "%$keyword%")
                 ->orWhere('correo', 'LIKE', "%$keyword%")
-                ->orWhere('direccion', 'LIKE', "%$keyword%")
-                ->orWhere('cargo', 'LIKE', "%$keyword%")
-                ->orWhere('empresa_id', 'LIKE', "%$keyword%")
+                ->orWhere('genero', 'LIKE', "%$keyword%")
                 ->latest()->paginate($perPage);
         } else {
-            $empleado = Empleado::latest()->paginate($perPage);
+            $contactos = Contacto::latest()->paginate($perPage);
         }
 
-        return view('empleado.index', compact('empleado'));
+        return view('contactos.index', compact('contactos'));
     }
 
     /**
@@ -42,7 +40,7 @@ class empleadoController extends Controller
      */
     public function create()
     {
-        return view('empleado.create');
+        return view('contactos.create');
     }
 
     /**
@@ -55,14 +53,14 @@ class empleadoController extends Controller
     public function store(Request $request)
     {
         $this->validate($request, [
-			'nombre' => 'required|min:5|max:20',
+			'nombre' => 'required|min:3|max:50',
 			'correo' => 'required|min:5'
 		]);
         $requestData = $request->all();
         
-        Empleado::create($requestData);
+        Contacto::create($requestData);
 
-        return redirect('empleado')->with('flash_message', 'Empleado added!');
+        return redirect('personal/contactos')->with('flash_message', 'Contacto added!');
     }
 
     /**
@@ -74,9 +72,9 @@ class empleadoController extends Controller
      */
     public function show($id)
     {
-        $empleado = Empleado::findOrFail($id);
+        $contacto = Contacto::findOrFail($id);
 
-        return view('empleado.show', compact('empleado'));
+        return view('contactos.show', compact('contacto'));
     }
 
     /**
@@ -88,9 +86,9 @@ class empleadoController extends Controller
      */
     public function edit($id)
     {
-        $empleado = Empleado::findOrFail($id);
+        $contacto = Contacto::findOrFail($id);
 
-        return view('empleado.edit', compact('empleado'));
+        return view('contactos.edit', compact('contacto'));
     }
 
     /**
@@ -104,15 +102,15 @@ class empleadoController extends Controller
     public function update(Request $request, $id)
     {
         $this->validate($request, [
-			'nombre' => 'required|min:5|max:20',
+			'nombre' => 'required|min:3|max:50',
 			'correo' => 'required|min:5'
 		]);
         $requestData = $request->all();
         
-        $empleado = Empleado::findOrFail($id);
-        $empleado->update($requestData);
+        $contacto = Contacto::findOrFail($id);
+        $contacto->update($requestData);
 
-        return redirect('empleado')->with('flash_message', 'Empleado updated!');
+        return redirect('personal/contactos')->with('flash_message', 'Contacto updated!');
     }
 
     /**
@@ -124,8 +122,8 @@ class empleadoController extends Controller
      */
     public function destroy($id)
     {
-        Empleado::destroy($id);
+        Contacto::destroy($id);
 
-        return redirect('empleado')->with('flash_message', 'Empleado deleted!');
+        return redirect('personal/contactos')->with('flash_message', 'Contacto deleted!');
     }
 }

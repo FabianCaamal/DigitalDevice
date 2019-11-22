@@ -5,10 +5,11 @@ namespace App\Http\Controllers;
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
 
-use App\Empleado;
+use App\Models\Alumno;
+use App\Models\Grupo;
 use Illuminate\Http\Request;
 
-class empleadoController extends Controller
+class AlumnoController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -21,18 +22,15 @@ class empleadoController extends Controller
         $perPage = 25;
 
         if (!empty($keyword)) {
-            $empleado = Empleado::where('nombre', 'LIKE', "%$keyword%")
-                ->orWhere('numero', 'LIKE', "%$keyword%")
-                ->orWhere('correo', 'LIKE', "%$keyword%")
-                ->orWhere('direccion', 'LIKE', "%$keyword%")
-                ->orWhere('cargo', 'LIKE', "%$keyword%")
-                ->orWhere('empresa_id', 'LIKE', "%$keyword%")
+            $alumno = Alumno::where('nombre', 'LIKE', "%$keyword%")
+                ->orWhere('descripcion', 'LIKE', "%$keyword%")
+                ->orWhere('grupo_id', 'LIKE', "%$keyword%")
                 ->latest()->paginate($perPage);
         } else {
-            $empleado = Empleado::latest()->paginate($perPage);
+            $alumno = Alumno::latest()->paginate($perPage);
         }
 
-        return view('empleado.index', compact('empleado'));
+        return view('alumno.index', compact('alumno'));
     }
 
     /**
@@ -42,7 +40,8 @@ class empleadoController extends Controller
      */
     public function create()
     {
-        return view('empleado.create');
+        $grupos=Grupo::All();
+        return view('alumno.create',array('grupos'=>$grupos));
     }
 
     /**
@@ -55,14 +54,13 @@ class empleadoController extends Controller
     public function store(Request $request)
     {
         $this->validate($request, [
-			'nombre' => 'required|min:5|max:20',
-			'correo' => 'required|min:5'
+			'nombre' => 'required|min:5|max:20'
 		]);
         $requestData = $request->all();
         
-        Empleado::create($requestData);
+        Alumno::create($requestData);
 
-        return redirect('empleado')->with('flash_message', 'Empleado added!');
+        return redirect('alumno')->with('flash_message', 'Alumno added!');
     }
 
     /**
@@ -74,9 +72,9 @@ class empleadoController extends Controller
      */
     public function show($id)
     {
-        $empleado = Empleado::findOrFail($id);
+        $alumno = Alumno::findOrFail($id);
 
-        return view('empleado.show', compact('empleado'));
+        return view('alumno.show', compact('alumno'));
     }
 
     /**
@@ -88,9 +86,9 @@ class empleadoController extends Controller
      */
     public function edit($id)
     {
-        $empleado = Empleado::findOrFail($id);
-
-        return view('empleado.edit', compact('empleado'));
+        $alumno = Alumno::findOrFail($id);
+        $grupos=Grupo::All();
+        return view('alumno.edit', compact('alumno','grupos'));
     }
 
     /**
@@ -104,15 +102,14 @@ class empleadoController extends Controller
     public function update(Request $request, $id)
     {
         $this->validate($request, [
-			'nombre' => 'required|min:5|max:20',
-			'correo' => 'required|min:5'
+			'nombre' => 'required|min:5|max:20'
 		]);
         $requestData = $request->all();
         
-        $empleado = Empleado::findOrFail($id);
-        $empleado->update($requestData);
+        $alumno = Alumno::findOrFail($id);
+        $alumno->update($requestData);
 
-        return redirect('empleado')->with('flash_message', 'Empleado updated!');
+        return redirect('alumno')->with('flash_message', 'Alumno updated!');
     }
 
     /**
@@ -124,8 +121,8 @@ class empleadoController extends Controller
      */
     public function destroy($id)
     {
-        Empleado::destroy($id);
+        Alumno::destroy($id);
 
-        return redirect('empleado')->with('flash_message', 'Empleado deleted!');
+        return redirect('alumno')->with('flash_message', 'Alumno deleted!');
     }
 }

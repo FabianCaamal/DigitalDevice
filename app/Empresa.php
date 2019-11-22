@@ -29,15 +29,15 @@ class Empresa extends Model
 
     public function empleados()
     {
-        return $this->hasMany('App\Models\Empleado');
+        return $this->hasMany('App\Empleado');
     }
     public function productos()
     {
-        return $this->hasMany('App\Models\Producto');
+        return $this->hasMany('App\Producto');
     }
     public function queja()
     {
-        return $this->hasMany('App\Models\Queja');
+        return $this->hasMany('App\Queja');
     }
     
 }

@@ -29,7 +29,7 @@ class Usuario extends Model
 
     public function quejas()
     {
-        return $this->hasMany('App\Models\Queja');
+        return $this->hasMany('App\Queja');
     }
     
 }

@@ -4,14 +4,14 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-class Venta extends Model
+class Contacto extends Model
 {
     /**
      * The database table used by the model.
      *
      * @var string
      */
-    protected $table = 'venta';
+    protected $table = 'contactos';
 
     /**
     * The database primary key value.
@@ -25,15 +25,7 @@ class Venta extends Model
      *
      * @var array
      */
-    protected $fillable = ['fecha', 'maquina_id', 'producto_id', 'Precio'];
+    protected $fillable = ['nombre', 'descripcion', 'correo', 'genero'];
 
-    public function producto()
-    {
-        return $this->belongsTo('App\Producto');
-    }
-    public function maquina()
-    {
-        return $this->belongsTo('App\Maquina');
-    }
     
 }
