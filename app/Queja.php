@@ -33,7 +33,7 @@ class Queja extends Model
     }
     public function empresa()
     {
-        return $this->hasOne('App\Empresa');
+        return $this->belongsTo('App\Empresa');
     }
     
 }
