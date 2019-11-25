@@ -36,12 +36,12 @@
         {
             "name": "solicitante",
             "type": "hasOne",
-            "class": "App\\Models\\Usuario"
+            "class": "App\\Usuario"
         },
         {
             "name": "dirigidoA",
             "type": "hasOne",
-            "class": "App\\Models\\Empresa"
+            "class": "App\\Empresa"
         }
     ],
     "validations": [

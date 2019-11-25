@@ -24,7 +24,7 @@ class VentaController extends Controller
             $venta = Venta::where('fecha', 'LIKE', "%$keyword%")
                 ->orWhere('maquina_id', 'LIKE', "%$keyword%")
                 ->orWhere('producto_id', 'LIKE', "%$keyword%")
-                ->orWhere('Precio', 'LIKE', "%$keyword%")
+                ->orWhere('precio', 'LIKE', "%$keyword%")
                 ->latest()->paginate($perPage);
         } else {
             $venta = Venta::latest()->paginate($perPage);
@@ -53,7 +53,7 @@ class VentaController extends Controller
     public function store(Request $request)
     {
         $this->validate($request, [
-			'Fecha' => 'required|min:5|max:20'
+			'fecha' => 'required|min:5|max:20'
 		]);
         $requestData = $request->all();
         
@@ -101,7 +101,7 @@ class VentaController extends Controller
     public function update(Request $request, $id)
     {
         $this->validate($request, [
-			'Fecha' => 'required|min:5|max:20'
+			'fecha' => 'required|min:5|max:20'
 		]);
         $requestData = $request->all();
         

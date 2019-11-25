@@ -6,15 +6,15 @@
 	"table":"empresas",
     "fields": [		
         {
-            "name": "Marca",
+            "name": "marca",
             "type": "string"
         },
         {
-            "name": "Direccion",
+            "name": "direccion",
             "type": "string"
         },
         {
-            "name": "Correo",
+            "name": "correo",
             "type": "string"
         }
     ],
@@ -23,17 +23,17 @@
         {
             "name": "empleados",
             "type": "hasMany",
-            "class": "App\\Models\\Empleado"
+            "class": "App\\Empleado"
         },
         {
             "name": "productos",
             "type": "hasMany",
-            "class": "App\\Models\\Producto"  
+            "class": "App\\Producto"  
         }
     ],
     "validations": [
         {
-            "field": "Correo",
+            "field": "correo",
             "rules": "required|min:5|max:20"
         }
     ]

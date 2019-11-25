@@ -6,19 +6,19 @@
 	"table":"trabajos",
     "fields": [		
         {
-            "name": "Empleado",
+            "name": "empleado",
             "type": "string"
         },
         {
-            "name": "UbicacionMaquina",
+            "name": "ubicacionMaquina",
             "type": "string"
         },
         {
-          "name": "CantidadAsignada",
+          "name": "cantidadAsignada",
             "type": "string"
         },
         {
-            "name": "FechaEncargo",
+            "name": "fechaEncargo",
             "type": "date"
         },
         {
@@ -34,21 +34,21 @@
         {
             "name": "empleado",
             "type": "hasOne",
-            "class": "App\\Models\\Empleado"
+            "class": "App\\Empleado"
         },
         {
             "name": "maquina",
             "type": "hasOne",
-            "class": "App\\Models\\Maquina"
+            "class": "App\\Maquina"
         }
     ],
     "validations": [
         {
-            "field": "Empleado",
+            "field": "empleado",
             "rules": "required|min:5|max:20"
         },
         {
-            "field": "FechaEncargo",
+            "field": "fechaEncargo",
             "rules": "required|min:5"
         }
     ]

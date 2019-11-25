@@ -24,7 +24,7 @@ class generarReporte extends Controller, implements IReportes
             	->get();
 
         $ProductoCantidad = Venta::Producto()
-        						->count();
+        					->count();
 	}
 
 	public function RproductoAlmacenado($producto)

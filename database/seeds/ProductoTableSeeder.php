@@ -13,9 +13,9 @@ class ProductoTableSeeder extends Seeder
      */
     public function run()
     {
-        DB::table('empresas')->insert([
-            'Nombre' => Str::random(10),
-            'precio' => Str::random(10);
+        DB::table('productos')->insert([
+            'nombre' => Str::random(10),
+            'precio' => Str::random(10),
             'Categoria' => Str::random(10),
             'distribuidor'=> Str::random(10),
         ]);

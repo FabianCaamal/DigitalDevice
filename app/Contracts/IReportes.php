@@ -3,8 +3,7 @@
 namespace App\Contracts;
 
 interface IReportes
-{
-	
+{ 	
 	///Operacion aritmetica de suma
 	public function RDinero($fechaIni, $fechaFin);
 

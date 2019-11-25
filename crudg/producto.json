@@ -14,7 +14,7 @@
             "type": "number"
         },
         {
-            "name": "Categoria",
+            "name": "categoria",
             "type": "select",
             "options": {
                 "Bebida": "Bebida",

@@ -13,10 +13,11 @@ class VentaTableSeeder extends Seeder
      */
     public function run()
     {
-        DB::table('empresas')->insert([
-            'Fecha' => Str::random(10),
-            'Producto' => Str::random(10);
-            'Precio' => Str::random(10),
+        DB::table('ventas')->insert([
+            'fecha' => '2019/11/24',
+            'maquina_id' => 1,
+            'producto_id' => 1,
+            'precio' => 7.5,
         ]);
     }
 }

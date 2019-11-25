@@ -1,6 +1,6 @@
 <div class="form-group {{ $errors->has('fecha') ? 'has-error' : ''}}">
     <label for="fecha" class="control-label">{{ 'Fecha' }}</label>
-    <input class="form-control" name="fecha" type="date" id="fecha" value="{{ isset($ventum->fecha) ? $ventum->fecha : ''}}" >
+    <input class="form-control" name="fecha" type="date" id="fecha" value="{{ isset($ventum->fecha) ? $ventum->fecha : ''}}" required>
     {!! $errors->first('fecha', '<p class="help-block">:message</p>') !!}
 </div>
 <div class="form-group {{ $errors->has('maquina_id') ? 'has-error' : ''}}">
@@ -13,10 +13,10 @@
     <input class="form-control" name="producto_id" type="number" id="producto_id" value="{{ isset($ventum->producto_id) ? $ventum->producto_id : ''}}" >
     {!! $errors->first('producto_id', '<p class="help-block">:message</p>') !!}
 </div>
-<div class="form-group {{ $errors->has('Precio') ? 'has-error' : ''}}">
-    <label for="Precio" class="control-label">{{ 'Precio' }}</label>
-    <input class="form-control" name="Precio" type="number" id="Precio" value="{{ isset($ventum->Precio) ? $ventum->Precio : ''}}" >
-    {!! $errors->first('Precio', '<p class="help-block">:message</p>') !!}
+<div class="form-group {{ $errors->has('precio') ? 'has-error' : ''}}">
+    <label for="precio" class="control-label">{{ 'Precio' }}</label>
+    <input class="form-control" name="precio" type="number" id="precio" value="{{ isset($ventum->precio) ? $ventum->precio : ''}}" >
+    {!! $errors->first('precio', '<p class="help-block">:message</p>') !!}
 </div>
 
 

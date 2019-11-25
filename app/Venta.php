@@ -11,7 +11,7 @@ class Venta extends Model
      *
      * @var string
      */
-    protected $table = 'venta';
+    protected $table = 'ventas';
 
     /**
     * The database primary key value.
@@ -25,13 +25,13 @@ class Venta extends Model
      *
      * @var array
      */
-    protected $fillable = ['fecha', 'maquina_id', 'producto_id', 'Precio'];
+    protected $fillable = ['fecha', 'maquina_id', 'producto_id', 'precio'];
 
-    public function producto()
+    public function producto_id()
     {
         return $this->belongsTo('App\Producto');
     }
-    public function maquina()
+    public function maquina_id()
     {
         return $this->belongsTo('App\Maquina');
     }
