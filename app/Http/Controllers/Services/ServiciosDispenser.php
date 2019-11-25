@@ -1,7 +1,7 @@
 <?php
 namespace App\Http\Controllers\Services;
 use App\Http\Controllers\Controller;
-use App\Contracts\IOperaciones;
+use App\Contracts\IReportes;
 use App\Venta;
 use App\Stock;
 
@@ -23,13 +23,15 @@ class generarReporte extends Controller, implements IReportes
 				->groupBy('Producto')            	          	
             	->get();
 
-        $ProductoCantidad = Venta::producto()->count();
+        $ProductoCantidad = Venta::Producto()
+        						->count();
 	}
 
 	public function RproductoAlmacenado($producto)
 	{
 		$ProductoRestantes = Stock::Producto()
-				->groupBy()           	
+				->groupBy()
+				->count()           	
             	->get();
 	}
 
