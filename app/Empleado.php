@@ -25,9 +25,9 @@ class Empleado extends Model
      *
      * @var array
      */
-    protected $fillable = ['nombre', 'edad', 'telefono', 'correo', 'direccion', 'nivelEducativo', 'cargo', 'FechaIngreso'];
+    protected $fillable = ['nombre', 'edad', 'telefono', 'correo', 'direccion', 'nivelEducativo', 'cargo', 'fechaIngreso', 'empresa_id'];
 
-    public function empresa()
+    public function empresa_id()
     {
         return $this->belongsTo('App\Empresa');
     }

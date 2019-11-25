@@ -37,10 +37,15 @@
     <input class="form-control" name="cargo" type="text" id="cargo" value="{{ isset($empleado->cargo) ? $empleado->cargo : ''}}" >
     {!! $errors->first('cargo', '<p class="help-block">:message</p>') !!}
 </div>
-<div class="form-group {{ $errors->has('FechaIngreso') ? 'has-error' : ''}}">
-    <label for="FechaIngreso" class="control-label">{{ 'Fechaingreso' }}</label>
-    <input class="form-control" name="FechaIngreso" type="date" id="FechaIngreso" value="{{ isset($empleado->FechaIngreso) ? $empleado->FechaIngreso : ''}}" >
-    {!! $errors->first('FechaIngreso', '<p class="help-block">:message</p>') !!}
+<div class="form-group {{ $errors->has('fechaIngreso') ? 'has-error' : ''}}">
+    <label for="fechaIngreso" class="control-label">{{ 'Fechaingreso' }}</label>
+    <input class="form-control" name="fechaIngreso" type="date" id="fechaIngreso" value="{{ isset($empleado->fechaIngreso) ? $empleado->fechaIngreso : ''}}" >
+    {!! $errors->first('fechaIngreso', '<p class="help-block">:message</p>') !!}
+</div>
+<div class="form-group {{ $errors->has('empresa_id') ? 'has-error' : ''}}">
+    <label for="empresa_id" class="control-label">{{ 'Empresa Id' }}</label>
+    <input class="form-control" name="empresa_id" type="number" id="empresa_id" value="{{ isset($empleado->empresa_id) ? $empleado->empresa_id : ''}}" >
+    {!! $errors->first('empresa_id', '<p class="help-block">:message</p>') !!}
 </div>
 
 

@@ -68,3 +68,4 @@ Route::resource('stock', 'StockController');
 Route::resource('stock', 'StockController');
 Route::resource('venta', 'VentaController');
 Route::resource('venta', 'VentaController');
+Route::resource('empleado', 'EmpleadoController');

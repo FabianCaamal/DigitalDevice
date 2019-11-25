@@ -43,15 +43,19 @@
             "type": "string"
         },
         {
-            "name": "FechaIngreso",
+            "name": "fechaIngreso",
             "type": "date"
+        },
+        {
+            "name": "empresa_id",
+            "type": "integer#unsigned"
         }
     ],
     "relationships": [
         {
-            "name": "empresa",
+            "name": "empresa_id",
             "type": "belongsTo",
-            "class": "App\\Models\\Empresa"
+            "class": "App\\Empresa"
         }
     ],
 

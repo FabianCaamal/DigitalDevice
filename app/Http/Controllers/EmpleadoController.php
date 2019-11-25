@@ -8,7 +8,7 @@ use App\Http\Controllers\Controller;
 use App\Empleado;
 use Illuminate\Http\Request;
 
-class empleadoController extends Controller
+class EmpleadoController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -22,10 +22,13 @@ class empleadoController extends Controller
 
         if (!empty($keyword)) {
             $empleado = Empleado::where('nombre', 'LIKE', "%$keyword%")
-                ->orWhere('numero', 'LIKE', "%$keyword%")
+                ->orWhere('edad', 'LIKE', "%$keyword%")
+                ->orWhere('telefono', 'LIKE', "%$keyword%")
                 ->orWhere('correo', 'LIKE', "%$keyword%")
                 ->orWhere('direccion', 'LIKE', "%$keyword%")
+                ->orWhere('nivelEducativo', 'LIKE', "%$keyword%")
                 ->orWhere('cargo', 'LIKE', "%$keyword%")
+                ->orWhere('fechaIngreso', 'LIKE', "%$keyword%")
                 ->orWhere('empresa_id', 'LIKE', "%$keyword%")
                 ->latest()->paginate($perPage);
         } else {
