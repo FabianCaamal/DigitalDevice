@@ -6,6 +6,7 @@ use App\Http\Requests;
 use App\Http\Controllers\Controller;
 
 use App\Empleado;
+use App\Empresa;
 use Illuminate\Http\Request;
 
 class EmpleadoController extends Controller
@@ -45,7 +46,8 @@ class EmpleadoController extends Controller
      */
     public function create()
     {
-        return view('empleado.create');
+        $empresas = Empresa::All();
+        return view('empleado.create', compact('empresas'));
     }
 
     /**
@@ -92,8 +94,8 @@ class EmpleadoController extends Controller
     public function edit($id)
     {
         $empleado = Empleado::findOrFail($id);
-
-        return view('empleado.edit', compact('empleado'));
+        $empresas = Empresa::All();
+        return view('empleado.edit', compact('empleado','empresas'));
     }
 
     /**

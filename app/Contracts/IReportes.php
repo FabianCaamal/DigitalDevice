@@ -9,7 +9,7 @@ interface IReportes
 
 	public function RVentas($fechaIni, $fechaFin);
 
-	public function RproductoAlmacenado($producto, $cantidad);
+	public function RproductoAlmacenado($producto);
 }
 
 ?>

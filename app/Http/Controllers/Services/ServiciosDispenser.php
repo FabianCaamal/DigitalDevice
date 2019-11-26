@@ -5,15 +5,17 @@ use App\Contracts\IReportes;
 use App\Venta;
 use App\Stock;
 
-class generarReporte extends Controller, implements IReportes
+class ServiciosDispenser extends Controller implements IReportes
 {
 	public function RDinero($fechaIni, $fechaFin)
 	{
 		//whereBetween('age', [$ageFrom, $ageTo]);
-		$DineroAlmacenado = Venta::whereBetween('Fecha', [$fechaIni, $fechaFin])				
+		$DineroAlmacenado = Venta::whereBetween('fecha', [$fechaIni, $fechaFin])				
             	->orderBy('date', 'desc') 
-            	->count('Precio')           	
+            	->sum('precio')           	
             	->get();
+
+         return array('r'=>$DineroAlmacenado);
 	}
 
 	public function RVentas($fechaIni, $fechaFin)
