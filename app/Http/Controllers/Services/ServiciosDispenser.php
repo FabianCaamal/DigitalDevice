@@ -2,6 +2,7 @@
 namespace App\Http\Controllers\Services;
 use App\Http\Controllers\Controller;
 use App\Contracts\IReportes;
+use Illuminate\Support\Facades\DB;
 use App\Venta;
 use App\Stock;
 
@@ -10,31 +11,28 @@ class ServiciosDispenser extends Controller implements IReportes
 	public function RDinero($fechaIni, $fechaFin)
 	{
 		//whereBetween('age', [$ageFrom, $ageTo]);
-		$DineroAlmacenado = Venta::whereBetween('fecha', [$fechaIni, $fechaFin])				
+		$DineroAlmacenado = Venta::whereBetween('fecha', [$fechaIni, $fechaFin])		
             	->orderBy('date', 'desc') 
-            	->sum('precio')           	
-            	->get();
+            	->sum('precio');
+            	
 
          return array('r'=>$DineroAlmacenado);
 	}
 
 	public function RVentas($fechaIni, $fechaFin)
 	{		
-		$RProducto = Venta::whereBetween('Fecha', [$fechaIni, $fechaFin])			
+		$RProducto = Venta::whereBetween('fecha', [$fechaIni, $fechaFin])
 				->orderBy('date', 'desc')  
-				->groupBy('Producto')            	          	
-            	->get();
+				->count('producto_id');
 
-        $ProductoCantidad = Venta::Producto()
-        					->count();
+			return array('r'=>$RProducto);
 	}
 
 	public function RproductoAlmacenado($producto)
 	{
 		$ProductoRestantes = Stock::Producto()
 				->groupBy()
-				->count()           	
-            	->get();
+				->count();
 	}
 
 }

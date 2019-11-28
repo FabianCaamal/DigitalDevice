@@ -24,4 +24,5 @@ Route::group(['prefix' => 'v1','middleware' => 'auth:api'], function () {
     #adminlte_api_routes
 });
 
-Route::get('/reporte/venta/{fechaIni}/{fechaFin}', 'Services\ServiciosDispenser@RDinero');
+Route::get('/reporte/dinero/{fechaIni}/{fechaFin}', 'Services\ServiciosDispenser@RDinero');
+Route::get('/reporte/venta/{fechaIni}/{fechaFin}', 'Services\ServiciosDispenser@RVentas');
