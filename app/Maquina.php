@@ -25,7 +25,7 @@ class Maquina extends Model
      *
      * @var array
      */
-    protected $fillable = ['codigo', 'longitud', 'latitud', 'DineroAlmacenado'];
+    protected $fillable = ['codigo', 'longitud', 'latitud', 'dineroAlmacenado'];
 
     public function stocks()
     {
@@ -34,6 +34,10 @@ class Maquina extends Model
     public function ventas()
     {
         return $this->hasMany('App\Ventas');
+    }
+    public function surtirs()
+    {
+        return $this->hasMany('App\Surtir');
     }
     
 }

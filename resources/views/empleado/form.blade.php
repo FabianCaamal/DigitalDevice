@@ -47,9 +47,13 @@
 
 <div class="form-group {{ $errors->has('empresa_id') ? 'has-error' : ''}}">
     <label for="empresa_id" class="control-label">{{ 'Empresa' }}</label>
+    
     <select class="form-control" name="empresa_id" >
         @foreach($empresas as $emp)
-        <option value="{{ $emp->id }}" {{isset($empleado->empresa_id) && $empleado->empresa_id== $emp->id ? 'selected' : ''}} > {{ $emp->Marca }}</option>
+
+        <option value="{{ $emp->id }}" {{isset($empleado->empresa_id) && $empleado->empresa_id== $emp->id ? 'selected' : ''}} >
+         {{ $emp->Marca }}</option>
+
         @endforeach
     </select>
 

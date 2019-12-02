@@ -25,7 +25,7 @@ class Producto extends Model
      *
      * @var array
      */
-    protected $fillable = ['nombre', 'precio', 'Categoria', 'Distribuidor'];
+    protected $fillable = ['nombre', 'precio', 'categoria', 'distribuidor'];
 
     public function stocks()
     {
@@ -37,7 +37,11 @@ class Producto extends Model
     }
      public function empresas()
     {
-        return $this->belongsTo('App\Models\Empresa');
+        return $this->belongsTo('App\Empresa');
+    }
+    public function surtirs()
+    {
+        return $this->hasMany('App\Surtir');
     }
 
     

@@ -98,7 +98,7 @@ class EmpleadoController extends Controller
         return view('empleado.edit', compact('empleado','empresas'));
     }
 
-    /**
+     /**
      * Update the specified resource in storage.
      *
      * @param \Illuminate\Http\Request $request

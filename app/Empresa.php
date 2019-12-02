@@ -25,7 +25,7 @@ class Empresa extends Model
      *
      * @var array
      */
-    protected $fillable = ['Marca', 'Direccion', 'Correo'];
+    protected $fillable = ['marca', 'direccion', 'correo'];
 
     public function empleados()
     {
