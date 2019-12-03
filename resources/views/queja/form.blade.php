@@ -12,13 +12,17 @@
 <div class="form-group {{ $errors->has('empresa_id') ? 'has-error' : ''}}">
     <label for="empresa_id" class="control-label">{{ 'Empresa Id' }}</label>
 
+
+
     <select class="form-control" name="empresa_id">
         @foreach($empresas as $emp)
             <option value=" {{$emp->id}} {{ isset($queja->empresa_id) && $queja->empresa_id==$emp->id ? 'selected' : ''}}">
-                {{$emp->marca}}
+                {{$emp->Marca}}
             </option>
         @endforeach
     </select>
+
+
 
     {!! $errors->first('empresa_id', '<p class="help-block">:message</p>') !!}
 </div>

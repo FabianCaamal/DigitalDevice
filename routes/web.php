@@ -71,3 +71,5 @@ Route::resource('venta', 'VentaController');
 Route::resource('empleado', 'EmpleadoController');
 Route::resource('surtir', 'SurtirController');
 Route::resource('surtir', 'SurtirController');
+Route::resource('producto', 'productoController');
+Route::resource('surtir', 'surtirController');

@@ -23,16 +23,16 @@
             }
         },
         {
-            "name": "Distribuidor",
-            "type": "select",
-            "options": {
-                "Coca-cola": "Coca-cola",
-                "Pepsico": "Pepsico",
-                "Grupo bimbo": "Grupo bimbo",
-                "Nestle": "Nestle",
-                "Mars": "Mars",
-                "Holanda": "Holanda"
-            }
+            "name": "empresa_id",
+            "type": "integer#unsigned"
+        }
+    ],
+
+    "relationships": [
+        {
+            "name": "empresa_id",
+            "type": "belongsTo",
+            "class": "App\\Empresa"
         }
     ],
 

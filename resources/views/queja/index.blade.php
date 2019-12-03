@@ -28,7 +28,7 @@
                             <table class="table">
                                 <thead>
                                     <tr>
-                                        <th>#</th><th>Usuario Id</th><th>Empresa Id</th><th>Detalles</th><th>Actions</th>
+                                        <th>#</th><th>Usuario</th><th>Empresa</th><th>Detalles</th><th>Actions</th>
                                     </tr>
                                 </thead>
                                 <tbody>
