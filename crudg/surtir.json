@@ -1,0 +1,58 @@
+{
+	"model_name":"Surtir",
+	"soft_deletes":"yes",
+	"pk":"id",
+	"localize":"yes",
+	"table":"surtirs",
+    "fields": [		        
+        {
+            "name": "maquina_id",
+            "type": "integer#unsigned"
+        },
+        {
+            "name": "producto_id",
+            "type": "integer#unsigned"  
+        },
+        {
+            "name": "cantidad",
+            "type":"number"
+        },
+        {
+            "name": "fechaRealizada",
+            "type": "date"
+        }
+    ],
+    "foreign_keys": [
+        {
+            "column": "maquina_id",
+            "references": "id",
+            "on": "maquinas",
+            "onDelete": "cascade"
+        },
+        {
+            "column": "producto_id",
+            "references": "id",
+            "on": "productos",
+            "onDelete": "cascade"
+        }
+    ],
+    
+    "relationships": [
+        {
+            "name": "empleado",
+            "type": "hasMany",
+            "class": "App\\Empleado"
+        },
+        {
+            "name": "maquina",
+            "type": "belongsTo",
+            "class": "App\\Maquina"
+        },
+        {
+            "name": "producto",
+            "type": "belongsTo",
+            "class": "App\\Producto"  
+        }
+    ]
+	
+}
