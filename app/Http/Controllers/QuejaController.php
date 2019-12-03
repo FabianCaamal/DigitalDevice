@@ -4,7 +4,8 @@ namespace App\Http\Controllers;
 
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
-
+use App\Usuario;
+use App\Empresa;
 use App\Queja;
 use Illuminate\Http\Request;
 
@@ -39,7 +40,9 @@ class QuejaController extends Controller
      */
     public function create()
     {
-        return view('queja.create');
+        $usuarios = Usuario::All();
+        $empresas = Empresa::All();
+        return view('queja.create', compact('usuarios', 'empresas'));
     }
 
     /**
@@ -86,7 +89,10 @@ class QuejaController extends Controller
     {
         $queja = Queja::findOrFail($id);
 
-        return view('queja.edit', compact('queja'));
+        $usuarios = Usuario::All();
+        $empresas = Empresa::All();
+
+        return view('queja.edit', compact('queja', 'usuarios', 'empresas'));
     }
 
     /**

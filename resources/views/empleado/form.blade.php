@@ -1,4 +1,4 @@
-<div class="form-group {{ $errors->has('nombre') ? 'has-error' : ''}}">
+    <div class="form-group {{ $errors->has('nombre') ? 'has-error' : ''}}">
     <label for="nombre" class="control-label">{{ 'Nombre' }}</label>
     <input class="form-control" name="nombre" type="text" id="nombre" value="{{ isset($empleado->nombre) ? $empleado->nombre : ''}}" required>
     {!! $errors->first('nombre', '<p class="help-block">:message</p>') !!}
@@ -52,7 +52,7 @@
         @foreach($empresas as $emp)
 
         <option value="{{ $emp->id }}" {{isset($empleado->empresa_id) && $empleado->empresa_id== $emp->id ? 'selected' : ''}} >
-         {{ $emp->Marca }}</option>
+         {{ $emp->marca }}</option>
 
         @endforeach
     </select>

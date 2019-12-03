@@ -43,7 +43,7 @@ class SurtirController extends Controller
     {
         $productos = Producto::All();
         $maquinas = Maquina::All();
-        return view('surtir.create', compact('productos', 'maquinas'));
+        return view('surtir.create', compact('producto', 'maquina'));
     }
 
     /**
@@ -93,7 +93,7 @@ class SurtirController extends Controller
         $surtir = Surtir::findOrFail($id);        
         $productos = Producto::All();
         $maquinas = Maquina::All();
-        return view('surtir.edit', compact('surtir', 'productos','maquinas'));
+        return view('surtir.edit', compact('surtir', 'producto','maquina'));
     }
 
     /**
