@@ -4,14 +4,14 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-class Empresa extends Model
+class Stock extends Model
 {
     /**
      * The database table used by the model.
      *
      * @var string
      */
-    protected $table = 'empresas';
+    protected $table = 'stocks';
 
     /**
     * The database primary key value.
@@ -25,19 +25,15 @@ class Empresa extends Model
      *
      * @var array
      */
-    protected $fillable = ['Marca', 'Direccion', 'Correo'];
+    protected $fillable = ['maquina_id', 'producto_id', 'cantidad'];
 
-    public function empleados()
+    public function producto()
     {
-        return $this->hasMany('App\Empleado');
+        return $this->hasOne('App\Producto');
     }
-    public function productos()
+    public function maquina()
     {
-        return $this->hasMany('App\Producto');
-    }
-    public function queja()
-    {
-        return $this->hasMany('App\Queja');
+        return $this->belongsTo('App\Maquina');
     }
     
 }

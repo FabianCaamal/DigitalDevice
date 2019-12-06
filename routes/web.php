@@ -73,3 +73,4 @@ Route::resource('surtir', 'SurtirController');
 Route::resource('surtir', 'SurtirController');
 Route::resource('producto', 'productoController');
 Route::resource('surtir', 'surtirController');
+Route::resource('stock', 'stockController');
