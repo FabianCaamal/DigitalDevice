@@ -18,8 +18,14 @@
     {!! $errors->first('categoria', '<p class="help-block">:message</p>') !!}
 </div>
 <div class="form-group {{ $errors->has('empresa_id') ? 'has-error' : ''}}">
-    <label for="empresa_id" class="control-label">{{ 'Empresa Id' }}</label>
-    <input class="form-control" name="empresa_id" type="number" id="empresa_id" value="{{ isset($producto->empresa_id) ? $producto->empresa_id : ''}}" >
+    <label for="empresa_id" class="control-label">{{ 'Empresa' }}</label>
+
+    <select class="form-control" name="empresa_id">
+        @foreach($empresas as $emp)
+        <option value="{{ $emp->id }}" {{ isset($producto->empresa_id) && $producto->empresa_id==$emp->id ? 'selected' : ''}}> {{$emp->Marca}} </option>
+        @endforeach
+    </select>
+
     {!! $errors->first('empresa_id', '<p class="help-block">:message</p>') !!}
 </div>
 

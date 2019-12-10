@@ -14,14 +14,14 @@ class EmpleadoTableSeeder extends Seeder
     public function run()
     {
         DB::table('empleados')->insert([
-            'nombre' => Str::random(10),
-            'edad' => Str::random(2),
-            'telefono' => Str::random(10),
-            'correo' => Str::random(10).'@gmail.com',
-            'direccion' => Str::random(10),
-            'nombre' => Str::random(10),
-            'cargo' => Str::random(10),
-            'fechaIngreso' => Str::random(10),
+            'nombre' => 'fabian caamal',
+            'edad' => 20,
+            'telefono' => '9995957022',
+            'correo' => 'fabian@gmail.com',
+            'direccion' => 'Maxcanú',
+            'nivelEducativo' => 'preparatoria',
+            'cargo' => 'surtidor',
+            'fechaIngreso' => '2019-10-10',
         ]);
     }
 }

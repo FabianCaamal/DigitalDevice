@@ -26,3 +26,4 @@ Route::group(['prefix' => 'v1','middleware' => 'auth:api'], function () {
 
 Route::get('/reporte/dinero/{fechaIni}/{fechaFin}', 'Services\ServiciosDispenser@RDinero');
 Route::get('/reporte/venta/{fechaIni}/{fechaFin}', 'Services\ServiciosDispenser@RVentas');
+Route::get('/almacenado/{producto_id}/{maquina_id}/{cantidad}', 'Services/ServicioAñadir@surtir');

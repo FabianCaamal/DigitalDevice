@@ -27,11 +27,11 @@ class Venta extends Model
      */
     protected $fillable = ['fecha', 'maquina_id', 'producto_id', 'precio'];
 
-    public function producto_id()
+    public function producto()
     {
         return $this->belongsTo('App\Producto');
     }
-    public function maquina_id()
+    public function maquina()
     {
         return $this->belongsTo('App\Maquina');
     }

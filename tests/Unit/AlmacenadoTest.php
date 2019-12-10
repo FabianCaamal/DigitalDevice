@@ -15,6 +15,17 @@ class almacenadoTest extends TestCase
      */
     public function testExample()
     {
+
+        $maquina='1';
+        $producto='1';
+        $cantidad='20';
+        
+        $response=$this->
+        json('GET',
+        '/api/almacenado/'.$maquina.'/'.$producto.'/'.$cantidad);
+        $response->assertStatus(200);//Si hay respuesta
+        $response->assertJson(['surtir'=>'producto añadido']);
+
         $this->assertTrue(true);
     }
 }

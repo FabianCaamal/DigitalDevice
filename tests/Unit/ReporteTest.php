@@ -15,8 +15,8 @@ class ReporteTest extends TestCase
      */
     public function testDineroTest()
     {
-        $a='2019-10-9';
-        $b='2019-11-27';
+        $a='2019-10-7';
+        $b='2019-11-29';
         
         $response=$this->
         json('GET',

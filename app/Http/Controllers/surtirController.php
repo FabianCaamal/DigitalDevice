@@ -6,6 +6,8 @@ use App\Http\Requests;
 use App\Http\Controllers\Controller;
 
 use App\Surtir;
+use App\Maquina;
+use App\Producto;
 use Illuminate\Http\Request;
 
 class surtirController extends Controller
@@ -40,7 +42,9 @@ class surtirController extends Controller
      */
     public function create()
     {
-        return view('surtir.create');
+        $maquinas = Maquina::All();
+        $productos = Producto::All();
+        return view('surtir.create', compact('productos', 'maquinas'));
     }
 
     /**
@@ -84,8 +88,10 @@ class surtirController extends Controller
     public function edit($id)
     {
         $surtir = Surtir::findOrFail($id);
+        $maquinas = Maquina::All();
+        $productos = Producto::All();
 
-        return view('surtir.edit', compact('surtir'));
+        return view('surtir.edit', compact('surtir', 'maquinas', 'productos'));
     }
 
     /**

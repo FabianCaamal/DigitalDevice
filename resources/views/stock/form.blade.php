@@ -1,11 +1,22 @@
 <div class="form-group {{ $errors->has('maquina_id') ? 'has-error' : ''}}">
-    <label for="maquina_id" class="control-label">{{ 'Maquina Id' }}</label>
-    <input class="form-control" name="maquina_id" type="number" id="maquina_id" value="{{ isset($stock->maquina_id) ? $stock->maquina_id : ''}}" >
+    <label for="maquina_id" class="control-label">{{ 'Maquina' }}</label>
+    <select class="form-control" name="maquina_id">
+        @foreach($maquinas as $maq)
+            <option value=" {{$maq->id}}" {{ isset($stock->maquina_id) && $stock->maquina_id==$maq->id ? 'selected' : ''}}> {{$maq->codigo}} </option>
+        @endforeach
+    </select>
+
     {!! $errors->first('maquina_id', '<p class="help-block">:message</p>') !!}
 </div>
 <div class="form-group {{ $errors->has('producto_id') ? 'has-error' : ''}}">
-    <label for="producto_id" class="control-label">{{ 'Producto Id' }}</label>
-    <input class="form-control" name="producto_id" type="number" id="producto_id" value="{{ isset($stock->producto_id) ? $stock->producto_id : ''}}" >
+    <label for="producto_id" class="control-label">{{ 'Producto' }}</label>
+
+    <select class="form-control" name="producto_id">
+        @foreach($productos as $p)
+            <option value="{{$p->id}}" {{ isset($stock->producto_id) && $stock->producto_id==$p->id ? 'selected' : ''}}> {{$p->nombre}} </option>
+        @endforeach
+    </select>
+
     {!! $errors->first('producto_id', '<p class="help-block">:message</p>') !!}
 </div>
 <div class="form-group {{ $errors->has('cantidad') ? 'has-error' : ''}}">

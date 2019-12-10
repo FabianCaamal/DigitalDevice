@@ -6,6 +6,8 @@ use App\Http\Requests;
 use App\Http\Controllers\Controller;
 
 use App\Venta;
+use App\Producto;
+use App\Maquina;
 use Illuminate\Http\Request;
 
 class VentaController extends Controller
@@ -40,7 +42,9 @@ class VentaController extends Controller
      */
     public function create()
     {
-        return view('venta.create');
+        $maquinas = Maquina::All();
+        $productos = Producto::All();
+        return view('venta.create' , compact('maquinas', 'productos'));
     }
 
     /**
@@ -86,8 +90,10 @@ class VentaController extends Controller
     public function edit($id)
     {
         $ventum = Venta::findOrFail($id);
+         $maquinas = Maquina::All();
+        $productos = Prodducto::All();
 
-        return view('venta.edit', compact('ventum'));
+        return view('venta.edit', compact('ventum', 'maquinas', 'productos'));
     }
 
     /**

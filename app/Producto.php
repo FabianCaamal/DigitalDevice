@@ -32,4 +32,13 @@ class Producto extends Model
         return $this->belongsTo('App\Empresa');
     }
     
+     public function stocks()
+    {
+        return $this->hasMany('App\Stock');
+    }
+
+    public function ventas()
+    {
+        return $this->hasOne('App\Venta');
+    }
 }

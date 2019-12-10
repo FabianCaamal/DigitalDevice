@@ -6,6 +6,8 @@ use App\Http\Requests;
 use App\Http\Controllers\Controller;
 
 use App\Stock;
+use App\Maquina;
+use App\Producto;
 use Illuminate\Http\Request;
 
 class stockController extends Controller
@@ -39,7 +41,10 @@ class stockController extends Controller
      */
     public function create()
     {
-        return view('stock.create');
+        $maquinas = Maquina::All();
+        $productos = Producto::All();
+
+        return view('stock.create', compact('maquinas', 'productos'));
     }
 
     /**
@@ -84,7 +89,10 @@ class stockController extends Controller
     {
         $stock = Stock::findOrFail($id);
 
-        return view('stock.edit', compact('stock'));
+        $maquinas = Maquina::All();
+        $productos = Producto::All();
+
+        return view('stock.edit', compact('stock', 'maquinas', 'productos'));
     }
 
     /**

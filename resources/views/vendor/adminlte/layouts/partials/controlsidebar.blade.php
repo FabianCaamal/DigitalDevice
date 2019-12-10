@@ -51,6 +51,7 @@
                     </label>
                     <p>
                         {{ trans('adminlte_lang::message.informationsettings') }}
+                        
                     </p>
                 </div><!-- /.form-group -->
             </form>

@@ -52,7 +52,7 @@
         @foreach($empresas as $emp)
 
         <option value="{{ $emp->id }}" {{isset($empleado->empresa_id) && $empleado->empresa_id== $emp->id ? 'selected' : ''}} >
-         {{ $emp->marca }}</option>
+         {{ $emp->Marca }}</option>
 
         @endforeach
     </select>

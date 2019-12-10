@@ -29,7 +29,7 @@ class Stock extends Model
 
     public function producto()
     {
-        return $this->hasOne('App\Producto');
+        return $this->belongsTo('App\Producto');
     }
     public function maquina()
     {

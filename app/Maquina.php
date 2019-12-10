@@ -33,7 +33,7 @@ class Maquina extends Model
     }
     public function ventas()
     {
-        return $this->hasMany('App\Ventas');
+        return $this->hasMany('App\Venta');
     }
     public function surtirs()
     {

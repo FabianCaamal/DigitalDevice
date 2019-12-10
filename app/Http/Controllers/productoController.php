@@ -6,6 +6,7 @@ use App\Http\Requests;
 use App\Http\Controllers\Controller;
 
 use App\Producto;
+use App\Empresa;
 use Illuminate\Http\Request;
 
 class productoController extends Controller
@@ -40,7 +41,8 @@ class productoController extends Controller
      */
     public function create()
     {
-        return view('producto.create');
+        $empresas = Empresa::All();
+        return view('producto.create', compact('empresas'));
     }
 
     /**
@@ -73,8 +75,9 @@ class productoController extends Controller
     public function show($id)
     {
         $producto = Producto::findOrFail($id);
+        $empresas = Empresa::All();
 
-        return view('producto.show', compact('producto'));
+        return view('producto.show', compact('producto', 'empresas'));
     }
 
     /**

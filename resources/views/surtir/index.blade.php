@@ -1,9 +1,8 @@
-@extends('layouts.app')
-
-@section('content')
+@extends('adminlte::Layouts.app')
+    @section('main-content')
     <div class="container">
         <div class="row">
-            @include('admin.sidebar')
+           
 
             <div class="col-md-9">
                 <div class="card">
@@ -30,14 +29,14 @@
                             <table class="table">
                                 <thead>
                                     <tr>
-                                        <th>#</th><th>Maquina Id</th><th>Producto Id</th><th>Cantidad</th><th>Actions</th>
+                                        <th>#</th><th>Maquina</th><th>Producto</th><th>Cantidad</th><th>Actions</th>
                                     </tr>
                                 </thead>
                                 <tbody>
                                 @foreach($surtir as $item)
                                     <tr>
                                         <td>{{ $loop->iteration }}</td>
-                                        <td>{{ $item->maquina_id }}</td><td>{{ $item->producto_id }}</td><td>{{ $item->cantidad }}</td>
+                                        <td>{{ $item->maquina->codigo }}</td><td>{{ $item->producto->nombre  }}</td><td>{{ $item->cantidad }}</td>
                                         <td>
                                             <a href="{{ url('/surtir/' . $item->id) }}" title="View surtir"><button class="btn btn-info btn-sm"><i class="fa fa-eye" aria-hidden="true"></i> View</button></a>
                                             <a href="{{ url('/surtir/' . $item->id . '/edit') }}" title="Edit surtir"><button class="btn btn-primary btn-sm"><i class="fa fa-pencil-square-o" aria-hidden="true"></i> Edit</button></a>

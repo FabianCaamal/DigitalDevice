@@ -38,16 +38,15 @@
                 <li><a href="{{ url('maquina') }}"><i class='glyphicon glyphicon-piggy-bank'></i> <span>Maquina</span></a></li>
 
                 <li class="treeview">
-                    <a href="#"><i class='fa fa-link'></i> <span>{{ trans('adminlte_lang::message.multilevel') }}</span> <i class="fa fa-angle-left pull-right"></i></a>
+                    <a href="#"><i class='fa fa-link'></i> <span>Otro</span> <i class="fa fa-angle-left pull-right"></i></a>
                     <ul class="treeview-menu">
-                        <li><a href="#">{{ trans('adminlte_lang::message.linklevel2') }}</a></li>
-                        <li><a href="#">{{ trans('adminlte_lang::message.linklevel2') }}</a></li>
+                        <li><a href=" {{url('stock')}} ">Stock</a></li>
+                        <li><a href=" {{url('venta')}} ">Ventas</a></li>
                     </ul>
                 </li>
+                <li><a href=" {{url('queja')}} "> <i class="glyphicon glyphicon-info-sign"></i> Quejas del usuario</a></li>
 
-                <li><a href="{{ url('trabajo') }}"><i class='glyphicon glyphicon-dashboard'></i> <span>Asignacion de Trabajo</span></a></li>
-
-                <li><a href="{{ url('suscripcion') }}"><i class='glyphicon glyphicon-usd'></i> <span>Suscripcion</span></a></li>
+                
                 
             </li>
         </ul><!-- /.sidebar-menu -->

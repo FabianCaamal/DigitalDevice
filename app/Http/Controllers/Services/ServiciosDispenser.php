@@ -22,17 +22,14 @@ class ServiciosDispenser extends Controller implements IReportes
 	public function RVentas($fechaIni, $fechaFin)
 	{		
 		$RProducto = Venta::whereBetween('fecha', [$fechaIni, $fechaFin])
-				->orderBy('date', 'desc')  
-				->count('producto_id');
+				->count();
 
 			return array('r'=>$RProducto);
 	}
 
 	public function RproductoAlmacenado($producto)
 	{
-		$ProductoRestantes = Stock::Producto()
-				->groupBy()
-				->count();
+		$ProductoRestantes = Stock::sum('cantidad');				
 	}
 
 }
