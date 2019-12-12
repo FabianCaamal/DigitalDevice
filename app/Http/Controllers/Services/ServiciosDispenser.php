@@ -27,9 +27,11 @@ class ServiciosDispenser extends Controller implements IReportes
 			return array('r'=>$RProducto);
 	}
 
-	public function RproductoAlmacenado($producto)
+	public function Contador($producto_id)
 	{
-		$ProductoRestantes = Stock::sum('cantidad');				
+		$existen = Stock::where('producto_id', $producto_id)->count('cantidad');
+
+		return array('quedan'=>'si queda');
 	}
 
 }

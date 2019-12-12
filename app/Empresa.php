@@ -39,5 +39,10 @@ class Empresa extends Model
     {
         return $this->hasMany('App\Queja');
     }
+
+    public function venta()
+    {
+        return $this->hasMany('App\Venta');
+    }
     
 }

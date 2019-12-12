@@ -1,5 +1,4 @@
 <?php
-
 use Illuminate\Http\Request;
 
 /*
@@ -26,4 +25,14 @@ Route::group(['prefix' => 'v1','middleware' => 'auth:api'], function () {
 
 Route::get('/reporte/dinero/{fechaIni}/{fechaFin}', 'Services\ServiciosDispenser@RDinero');
 Route::get('/reporte/venta/{fechaIni}/{fechaFin}', 'Services\ServiciosDispenser@RVentas');
-Route::get('/almacenado/{producto_id}/{maquina_id}/{cantidad}', 'Services/ServicioAñadir@surtir');
+Route::get('/reporte/contador/{producto_id}', 'Services\ServiciosDispenser@Contador');
+
+Route::get('/surtir/{producto_id}/{maquina_id}/{cantidad}', 'Services\ServicioAdd@Surtir');
+
+Route::get('/contarQuejas/{usuario_id}','Services\QuejaContador@ContarQueja');
+
+Route::get('/venta/{producto_id}/{maquina_id}', 
+	'Services\ServicioAlmacenamientoVenta@dineroVenta');
+
+Route::get('/busquedaProducto/{name}', 'Services\BuscarServicio@searchProducto');
+Route::get('/busquedaMaquina/{name}', 'Services\BuscarServicio@searchMaquina');

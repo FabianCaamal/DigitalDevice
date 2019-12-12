@@ -6,7 +6,7 @@ use Tests\TestCase;
 use Illuminate\Foundation\Testing\WithFaker;
 use Illuminate\Foundation\Testing\RefreshDatabase;
 
-class almacenadoTest extends TestCase
+class AlmacenadoTest extends TestCase
 {
     /**
      * A basic unit test example.
@@ -22,7 +22,7 @@ class almacenadoTest extends TestCase
         
         $response=$this->
         json('GET',
-        '/api/almacenado/'.$maquina.'/'.$producto.'/'.$cantidad);
+        '/api/surtir/'.$maquina.'/'.$producto.'/'.$cantidad);
         $response->assertStatus(200);//Si hay respuesta
         $response->assertJson(['surtir'=>'producto añadido']);
 

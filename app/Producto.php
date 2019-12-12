@@ -37,8 +37,8 @@ class Producto extends Model
         return $this->hasMany('App\Stock');
     }
 
-    public function ventas()
+    public function venta()
     {
-        return $this->hasOne('App\Venta');
+        return $this->hasMany('App\Venta');
     }
 }
