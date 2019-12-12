@@ -29,5 +29,5 @@ class EmpresaTableSeeder extends Seeder
         	'correo' => 'bimbo@empresa.com'
         ]);
     }
-    }
+    
 }

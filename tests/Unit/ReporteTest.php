@@ -22,7 +22,7 @@ class ReporteTest extends TestCase
         json('GET',
         '/api/reporte/dinero/'.$a.'/'.$b);
         $response->assertStatus(200);//Si hay respuesta
-        $response->assertJson(['r'=>20]);
+        $response->assertJson(['r'=>40]);
     	
         $this->assertTrue(true);
     }

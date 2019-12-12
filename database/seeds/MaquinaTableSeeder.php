@@ -12,7 +12,7 @@ class MaquinaTableSeeder extends Seeder
     public function run()
     {
         DB::table('maquinas')->insert([
-        	'codigo' => '43784',
+        	'codigo' => 'A123BC',
         	'longitud' => '1839235002',
         	'latitud' => '36120093728',
         	'dineroAlmacenado' => 760
